@@ -19,6 +19,13 @@
  */
 
 @theme inline {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Plus Jakarta Sans", sans-serif;
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-light: var(--brand-light);
+  --color-navy: var(--navy);
+  --color-orange: var(--orange);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -63,6 +70,16 @@
 
 :root {
   --radius: 0.625rem;
+  --brand: oklch(0.72 0.22 145);
+  --brand-dark: oklch(0.42 0.14 155);
+  --brand-light: oklch(0.88 0.16 140);
+  --navy: oklch(0.28 0.08 260);
+  --orange: oklch(0.72 0.19 55);
+  --gradient-hero: linear-gradient(135deg, oklch(0.28 0.08 260) 0%, oklch(0.32 0.13 175) 40%, oklch(0.55 0.20 155) 100%);
+  --gradient-brand: linear-gradient(135deg, var(--brand-dark), var(--brand));
+  --gradient-accent: linear-gradient(135deg, var(--brand), var(--brand-light));
+  --shadow-brand: 0 20px 50px -20px color-mix(in oklab, var(--brand) 55%, transparent);
+  --shadow-soft: 0 12px 40px -20px oklch(0.28 0.08 260 / 0.25);
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
@@ -140,5 +157,41 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  html { scroll-behavior: smooth; }
+}
+
+@utility bg-gradient-hero { background-image: var(--gradient-hero); }
+@utility bg-gradient-brand { background-image: var(--gradient-brand); }
+@utility bg-gradient-accent { background-image: var(--gradient-accent); }
+@utility text-gradient-brand {
+  background-image: var(--gradient-brand);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+@utility shadow-brand { box-shadow: var(--shadow-brand); }
+@utility shadow-soft { box-shadow: var(--shadow-soft); }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float-slow {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@utility animate-fade-up { animation: fade-up 0.8s ease-out both; }
+@utility animate-float { animation: float-slow 6s ease-in-out infinite; }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+@layer base {
+  :root {
+    color-scheme: light;
   }
 }
