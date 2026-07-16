@@ -78,10 +78,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "HTH Plastik — Solusi Kemasan Anda | PT HTH Sinergi Intranusa" },
-      { name: "description", content: "HTH Plastik (PT HTH Sinergi Intranusa) — supplier plastik industri di Indonesia. Biji plastik, kantong kresek, kantong sampah, plastik mulsa, polybag & lainnya." },
+      {
+        name: "description",
+        content:
+          "HTH Plastik (PT HTH Sinergi Intranusa) — supplier plastik industri di Indonesia. Biji plastik, kantong kresek, kantong sampah, plastik mulsa, polybag & lainnya.",
+      },
       { name: "author", content: "PT HTH Sinergi Intranusa" },
       { property: "og:title", content: "HTH Plastik — Solusi Kemasan Anda" },
-      { property: "og:description", content: "Supplier plastik industri terpercaya di Indonesia. Produksi, distribusi & daur ulang." },
+      {
+        property: "og:description",
+        content:
+          "Supplier plastik industri terpercaya di Indonesia. Produksi, distribusi & daur ulang.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -90,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

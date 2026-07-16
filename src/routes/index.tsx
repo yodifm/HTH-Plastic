@@ -30,7 +30,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-full.png";
 import clientAds from "@/assets/Client/ADS.png";
 import clientMulti from "@/assets/Client/multi.png";
 import clientRsia from "@/assets/Client/RSIA.png";
@@ -94,7 +94,7 @@ export const Route = createFileRoute("/")({
 });
 
 const WA_NUMBER = "628119993775";
-const WA_SARI_NUMBER = "6281183831800";
+const WA_SARI_NUMBER = "628118383180";
 
 const SOCIALS = [
   { icon: Instagram, label: "Instagram", href: "#" },
@@ -274,9 +274,9 @@ function Index() {
               <img
                 src={logo}
                 alt="HTH Plastik"
-                width={32}
-                height={32}
-                className="h-8 w-8 object-contain"
+                width={145}
+                height={100}
+                className="h-12 w-auto object-contain"
               />
             </button>
 
@@ -823,7 +823,7 @@ function Index() {
                       dir="ltr"
                       className="inline-block font-semibold text-navy hover:text-brand-dark"
                     >
-                      +62 811-8383-1800
+                      +62 811-8383-180
                     </a>
                   </div>
                 </li>
@@ -921,9 +921,9 @@ function Index() {
             <img
               src={logo}
               alt="HTH Plastik"
-              width={32}
-              height={32}
-              className="h-8 w-8 object-contain"
+              width={121}
+              height={83}
+              className="h-10 w-auto object-contain"
               loading="lazy"
             />
             <p className="text-xs text-muted-foreground">

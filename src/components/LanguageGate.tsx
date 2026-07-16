@@ -45,10 +45,11 @@ export function LanguageGate({ children }: { children: ReactNode }) {
               className="mx-auto h-24 w-auto object-contain"
             />
             <h2 className="mt-5 text-xl font-bold text-navy">
-              Pilih Bahasa · Choose Language · اختر اللغة
+              Pilih Bahasa · Choose Language · اختر اللغة · 选择语言
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Silakan pilih bahasa Anda / Please select your language / يرجى اختيار لغتك
+              Silakan pilih bahasa Anda / Please select your language / يرجى اختيار لغتك /
+              请选择您的语言
             </p>
             <div className="mt-6 flex flex-col gap-3">
               {LANGUAGES.map((l) => (
